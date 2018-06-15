@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Laravel Quickstart - Intermediate</title>
+    <title>Smart-Call.pro</title>
 
     <!-- Fonts -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
@@ -23,6 +23,10 @@
         .fa-btn {
             margin-right: 6px;
         }
+
+        span.glyphicon {
+            color: #337ab7;
+        }
     </style>
 </head>
 <body id="app-layout">
@@ -39,9 +43,12 @@
                 </button>
 
                 <!-- Branding Image -->
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    Task List
-                </a>
+                <a class="navbar-brand" href="{{ url('/') }}">Smart-Call.pro</a>
+                <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-fire"></span> Информация</a>
+                <a class="navbar-brand" href="{{ url('/tasks') }}"><span class="glyphicon glyphicon-list-alt"></span> Мои задания</a>
+                <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-transfer"></span> Мои запросы</a>
+                <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-stats"></span> Статистика</a>
+                <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-list"></span> Моё расписание</a>
             </div>
 
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
@@ -54,15 +61,16 @@
                     <!-- Authentication Links -->
                     @if (Auth::guest())
                         <li><a href="{{ url('/login') }}">Login</a></li>
-                        <li><a href="{{ url('/register') }}">Register</a></li>
+                        <li><a href="{{ url('/register') }}"></a></li>
                     @else
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                <span class="glyphicon glyphicon-user"></span>
                                 {{ Auth::user()->name }} <span class="caret"></span>
                             </a>
 
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
+                                <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Выйти</a></li>
                             </ul>
                         </li>
                     @endif
