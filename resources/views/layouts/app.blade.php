@@ -43,12 +43,16 @@
                 </button>
 
                 <!-- Branding Image -->
+                @if (Auth::guest())
+                    <a class="navbar-brand" href="{{ url('/') }}">Smart-Call.pro</a>
+                @else
                 <a class="navbar-brand" href="{{ url('/') }}">Smart-Call.pro</a>
                 <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-fire"></span> Информация</a>
                 <a class="navbar-brand" href="{{ url('/tasks') }}"><span class="glyphicon glyphicon-list-alt"></span> Мои задания</a>
                 <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-transfer"></span> Мои запросы</a>
                 <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-stats"></span> Статистика</a>
                 <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-list"></span> Моё расписание</a>
+                @endif
             </div>
 
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
