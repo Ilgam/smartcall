@@ -5,9 +5,8 @@
         <div class="col-sm-offset-1 col-sm-10">
             <div class="panel panel-primary">
                 <div class="panel-heading">
-                    Новая задача
+                    Новая задача:
                 </div>
-
                 <div class="panel-body">
                     <!-- Display Validation Errors -->
                 @include('common.errors')
@@ -25,7 +24,7 @@
                         {{--</div>--}}
                         {{--</div>--}}
                         <div class="form-group">
-                            <label for="task-inn" class="col-sm-2 control-label">ИНН</label>
+                            <label for="task-inn" class="col-sm-2 control-label">ИНН {{ Auth::user()->id }}</label>
                             <div class="col-sm-9">
                                 <input disabled type="text" name="name" id="task-inn" class="form-control" value="{{ $client->inn }}">
                             </div>

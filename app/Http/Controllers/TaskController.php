@@ -44,7 +44,9 @@ class TaskController extends Controller
     {
         return view('tasks.index', [
             'tasks' => $this->tasks->forUser($request->user()),
-            'client' => Client::find(3)
+            'user' => $request->user(),
+            'sip_host' => getenv('SIP_HOST'),
+            'client' => Client::first()
         ]);
     }
 
@@ -70,9 +72,11 @@ class TaskController extends Controller
     /**
      * Destroy the given task.
      *
-     * @param  Request  $request
-     * @param  Task  $task
+     * @param  Request $request
+     * @param  Task $task
      * @return Response
+     * @throws \Exception
+     * @throws \Illuminate\Auth\Access\AuthorizationException
      */
     public function destroy(Request $request, Task $task)
     {

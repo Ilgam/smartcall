@@ -163,7 +163,6 @@
                     <textarea title="status" rows="5" id="presenceStat" style="width: 585px; height: 150px;"></textarea>
                 </div>
             </div>
-
         </div>
         <br>
         <hr>
