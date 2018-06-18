@@ -221,7 +221,7 @@
 
     <style type="text/css">
         .dn{
-            display: none;
+            display: none !important;
         }
 
         #shell-panel {

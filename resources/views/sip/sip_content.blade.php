@@ -14,18 +14,19 @@
                 <input type="text" placeholder="SIP ID" id="login" value="0042536098" class="form-control" />
                 <br>
                 <label>Пароль:</label>
-                <input type="password" placeholder="password" id="password" value="55H352Gc" class="form-control" />
+                {{--55H352Gc--}}
+                <input type="password" placeholder="password" id="password" value="" class="form-control" />
                 <br>
                 <label class="dn">Прием звоноков на:</label>
                 <br>
-                <button id='callOnWeb' class="btn btn-default btn-primary" type="button" onclick="onDevice(false)" style="width:160px;">рабочем месте</button>
-                <button id='callOnDevice' class="btn btn-default" type="button" onclick="onDevice(true);" style="width:160px;">SIP-устройстве</button>
+                <button id='callOnWeb' class="dn btn btn-default btn-primary" type="button" onclick="onDevice(false)" style="width:160px;">рабочем месте</button>
+                <button id='callOnDevice' class="dn btn btn-default" type="button" onclick="onDevice(true);" style="width:160px;">SIP-устройстве</button>
                 <br>
                 <br>
                 <input id="btnLogin" class="btn btn-default" type="button" value="Начать работу" onclick="startWork(); return false;" />
                 <input id="btnLogout" class="btn btn-default" type="button" value="Закончить работу" onclick="stopWork(); return false;"
                 />
-                <input id="btnRecover" class="btn btn-default" type="button" value="Восстановить пароль" onclick="recoverPass(); return false;"
+                <input id="btnRecover" class="dn btn btn-default" type="button" value="Восстановить пароль" onclick="recoverPass(); return false;"
                 />
             </div>
             <div class="col-lg-8">
@@ -83,7 +84,7 @@
                         <select id="videoSource"></select>
                     </div>
                 </div>
-                <div class="col-lg-4" style="display:inline;" id="secondCall">
+                <div class="dn col-lg-4" style="display:inline;" id="secondCall">
                     <h3>Звонок для перевода</h3>
                     <label>Куда звоним:</label>
                     <input type="tel" placeholder="71234567890" id="number_2" value="" class="form-control" style="width: 300px" />
@@ -122,15 +123,12 @@
                     <br>
                     <input id="btnAttended" class="btn btn-success" type="button" value="Соединить звонки" onclick="attendedTransfer(2); return false;"
                            style="display:inline-block;" />
-
                 </div>
             </div>
-
-
-
         </div>
         <hr>
 
+        <div class="dn">
         <div class="container">
             <!-- установка статуса -->
             <div class="row">
@@ -168,9 +166,7 @@
 
         </div>
         <br>
-
         <hr>
-
         <div class="container">
             <!-- ростер -->
             <div class="row">
@@ -197,9 +193,7 @@
 
         </div>
         <br>
-
         <hr>
-
         <div class="container">
             <!-- ростер -->
             <div class="row">
@@ -228,9 +222,7 @@
 
         </div>
         <br>
-
         <hr>
-
         <div class="container">
             <!-- ростер -->
             <div class="row">
@@ -271,9 +263,7 @@
                 }
             });
         </script>
-
         <hr>
-
         <div class="container">
             <!-- ростер -->
             <div class="row">
@@ -293,9 +283,7 @@
 
         </div>
         <br>
-
         <hr>
-
         <div class="container">
             <!-- ростер -->
             <div class="row">
@@ -313,9 +301,7 @@
 
         </div>
         <br>
-
         <hr>
-
         <div class="container">
             <!-- ростер -->
             <div class="row">
@@ -333,9 +319,7 @@
 
         </div>
         <br>
-
         <hr>
-
         <div class="container">
             <!-- ростер -->
             <div class="row">
@@ -353,9 +337,7 @@
 
         </div>
         <br>
-
         <hr>
-
         <div class="container">
             <!-- ростер -->
             <div class="row">
@@ -373,9 +355,7 @@
 
         </div>
         <br>
-
         <hr>
-
         <div class="container">
             <!-- ростер -->
             <div class="row">
@@ -394,7 +374,6 @@
         </div>
         <br>
         <hr>
-
         <div class="container">
 
             <div class="row">
@@ -413,7 +392,6 @@
         </div>
         <br>
         <hr>
-
         <div class="container">
 
             <div class="row">
@@ -431,11 +409,7 @@
 
         </div>
         <br>
-
         <hr>
-
-
-
         <div class="container">
 
             <div class="row">
@@ -454,7 +428,6 @@
         </div>
         <br>
         <hr>
-
         <div class="container">
 
             <div class="row">
@@ -473,8 +446,6 @@
         </div>
         <br>
         <hr>
-
-
         <div class="container">
 
             <div class="row">
@@ -496,7 +467,6 @@
 
         </div>
         <br>
-
         <div class="container">
 
             <div class="row">
@@ -510,9 +480,9 @@
 
         </div>
         <br>
+        </div>
     </div>
     <script src="{{ URL::asset('public/js/bootstrap.min.js') }}"></script>
-
     <div class="modal modal-list modal_print-calc modal_calc-action mgc-calc-modal" id="ddd">
         <div class="modal-scroller custom-scroll">
             <div class="modal-body modal-body-relative">
@@ -532,7 +502,6 @@
             </div>
         </div>
     </div>
-
     <script>
         $('.mgc-calc-modal .button-cancel').on('click', function () {
             $('.mgc-calc-modal').style.display = 'none';
@@ -562,11 +531,8 @@
             />
         </center>
     </div>
-
-
     <script>
         loadCredentials();
-
         function checkbox_1_changed() {
             if (ximssSession.currentCalls != null && Object.keys(ximssSession.currentCalls).length > 0) {
                 if ($("#isvideo_1").prop('checked') == true) {
@@ -585,7 +551,5 @@
             }
         }
     </script>
-
     <div onclick="show('none')" id="wrap"></div>
-
 @endsection
