@@ -30,7 +30,7 @@ Route::group(['middleware' => ['web']], function () {
 
     Route::get('/call', function () {
         return view('sip.sip_content');
-    })->middleware('guest');
+    })->middleware('auth');
 
     Route::get('/tasks', 'TaskController@index');
     Route::post('/task', 'TaskController@store');

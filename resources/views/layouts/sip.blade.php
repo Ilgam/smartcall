@@ -66,13 +66,6 @@
             margin-top: 5px;
             display: inline-block;
         }
-
-
-
-
-
-
-
         .card-widgets__widget__body .ac-form {
             padding-left: 25px;
         }
@@ -207,7 +200,6 @@
             } else {
                 $('#callType').text('входящий звонок');
             }
-
         }
     </script>
     {{--{{ URL::asset('css/css.css') }}--}}
