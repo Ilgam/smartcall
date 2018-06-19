@@ -23,6 +23,7 @@
                         {{--<input type="text" name="name" id="task-name" class="form-control" value="{{ old('task') }}">--}}
                         {{--</div>--}}
                         {{--</div>--}}
+                        {{ $cid }}
                         <div class="form-group">
                             <label for="task-inn" class="col-sm-2 control-label">ИНН {{ Auth::user()->id }}</label>
                             <div class="col-sm-9">

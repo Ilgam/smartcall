@@ -42,11 +42,16 @@ class TaskController extends Controller
      */
     public function index(Request $request)
     {
+        $user = $request->user();
+        $client = Client::first();
+        $Sipnet = new SipnetController($user->sip_login, $user->sip_password);
+        $cid = $Sipnet->getCidButton($client->phone);
+
         return view('tasks.index', [
             'tasks' => $this->tasks->forUser($request->user()),
             'user' => $request->user(),
-            'sip_host' => getenv('SIP_HOST'),
-            'client' => Client::first()
+            'cid' => $cid,
+            'client' => $client
         ]);
     }
 
