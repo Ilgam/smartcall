@@ -32,7 +32,14 @@ Route::group(['middleware' => ['web']], function () {
         return view('sip.sip_content');
     })->middleware('auth');
 
-    Route::get('/tasks', 'TaskController@index');
+    Route::get('/test', 'TaskController@test')->middleware('auth');
+
+    Route::get('/tasks/{id?}', 'TaskController@index');
+
+    Route::get('/task/success/{id}', 'TaskController@success');
+    Route::get('/task/defer/{id}', 'TaskController@defer');
+    Route::get('/task/fail/{id}/{fail_status_id}', 'TaskController@fail');
+
     Route::post('/task', 'TaskController@store');
     Route::delete('/task/{task}', 'TaskController@destroy');
 

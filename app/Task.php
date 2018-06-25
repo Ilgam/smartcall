@@ -11,7 +11,13 @@ class Task extends Model
      *
      * @var array
      */
-    protected $fillable = ['name'];
+    protected $fillable = [
+        'user_id',
+        'client_id',
+        'task_status_id',
+        'comment',
+        'name'
+    ];
     
     /**
      * The attributes that should be cast to native types.
@@ -20,13 +26,17 @@ class Task extends Model
      */
     protected $casts = [
         'user_id' => 'int',
+        'client_id' => 'int',
+        'task_status_id' => 'int',
     ];
 
-    /**
-     * Get the user that owns the task.
-     */
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function clients()
+    {
+        return $this->hasOne(Client::class);
     }
 }

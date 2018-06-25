@@ -13,7 +13,13 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'sip_login', 'sip_password', 'sip_mode'
+        'company_id',
+        'name',
+        'email',
+        'password',
+        'sip_login',
+        'sip_password',
+        'sip_mode'
     ];
 
     /**
@@ -25,11 +31,18 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    /**
-     * Get all of the tasks for the user.
-     */
     public function tasks()
     {
         return $this->hasMany(Task::class);
+    }
+
+    public function company()
+    {
+        return $this->belongsTo(Company::class);
+    }
+
+    public function groups()
+    {
+        return $this->hasMany(Group::class);
     }
 }
