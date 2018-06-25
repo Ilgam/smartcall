@@ -39,6 +39,7 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/task/success/{id}', 'TaskController@success');
     Route::get('/task/defer/{id}', 'TaskController@defer');
     Route::get('/task/fail/{id}/{fail_status_id}', 'TaskController@fail');
+    Route::get('/task/notexist/{id}', 'TaskController@notexist');
 
     Route::post('/task', 'TaskController@store');
     Route::delete('/task/{task}', 'TaskController@destroy');

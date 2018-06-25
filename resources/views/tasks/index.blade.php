@@ -120,6 +120,9 @@
                                 <a onclick="$('.fail_status').toggle(); return false;" type="button" class="btn btn-danger">
                                     <i class="fa fa-btn fa-times"></i>Отказ
                                 </a>
+                                <a href="{{ url('/task/notexist/' . $client->id) }}" type="button" class="btn btn-danger">
+                                    <i class="fa fa-btn fa-times"></i>Не существует
+                                </a>
                             </div>
                         </div>
                         <div class="form-group fail_status" style="display: none;">

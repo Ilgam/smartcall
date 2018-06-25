@@ -149,6 +149,23 @@ class TaskController extends Controller
         return redirect('/tasks');
     }
 
+    public function notexist(Request $request, $id)
+    {
+        $Task = Task::firstOrCreate(['client_id' => $id]);
+        $Task->user_id = $request->user()->id;
+        $Task->client_id = $id;
+        $Task->task_status_id = 4;
+        $Task->fail_status_id = 0;
+        $Task->save();
+
+        $Client = Client::find($id);
+        $Client->user_id = $request->user()->id;
+        $Client->task_id = $Task->id;
+        $Client->save();
+
+        return redirect('/tasks');
+    }
+
     /**
      * Destroy the given task. не используется
      *
